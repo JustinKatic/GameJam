@@ -6,52 +6,33 @@ public class PrefabColourLogic : MonoBehaviour
     [SerializeField] BoxCollider MyCollider;
     [SerializeField] ScriptableBool MyBool;
 
-    private Material mat;
-    private float speed = 2f;
-
 
     void Start()
     {
-        mat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
     private void Update()
     {
         if (MyBool.Value)
         {
-            SetObjOpaq();
+            SetObjAct();
         }
         else if (!MyBool.Value)
         {
-            SetObjTrans();
+            SetObjUnAct();
         }
     }
 
 
-    void SetObjTrans()
+    void SetObjAct()
     {
-        if (mat.color.a > 0)
-        {
-            Color newColor = mat.color;
-            newColor.a -= speed * Time.deltaTime;
-            mat.color = newColor;
-            gameObject.GetComponent<MeshRenderer>().material = mat;
-        }
-        else 
-        {
-            MyCollider.enabled = false;
-        }
+        MyCollider.enabled = true;
+        MyMesh.enabled = true;
     }
 
-    void SetObjOpaq()
+    void SetObjUnAct()
     {
-        if (mat.color.a < 255)
-        {
-            Color newColor = mat.color;
-            newColor.a += speed * Time.deltaTime;
-            mat.color = newColor;
-            gameObject.GetComponent<MeshRenderer>().material = mat;        
-            MyCollider.enabled = true;
-        }
+        MyCollider.enabled = false;
+        MyMesh.enabled = false;
     }
 }
