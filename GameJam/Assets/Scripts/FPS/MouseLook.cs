@@ -2,11 +2,10 @@
 
 public class MouseLook : MonoBehaviour
 {
-    public float m_sensitivity = 100f; // mouse sensitivity
+    public ScriptableFloat m_sensitivity; // mouse sensitivity
     public float m_clampAngle = 90f; // this limits our look up 
     public Transform m_playerObject; // Store player container
     public Transform m_camera; // Store the camera transform
-    public KeyCode m_freeMouse;
 
     private Vector2 m_mousePos; // store mouse position
 
@@ -24,7 +23,7 @@ public class MouseLook : MonoBehaviour
     void Update()
     {
         GetMousePos(); // GetMousePos(); //get mouse position
-        ClampUpRotation();              // FixXRotation();//clamp the look up
+        ClampUpRotation();// FixXRotation();//clamp the look up
         LookAt();// look at mouse position
         
     }
@@ -32,8 +31,8 @@ public class MouseLook : MonoBehaviour
     //Get mouse position
     private void GetMousePos()
     {
-        m_mousePos.x = Input.GetAxis("Mouse X") * m_sensitivity * Time.deltaTime;
-        m_mousePos.y = Input.GetAxis("Mouse Y") * m_sensitivity * Time.deltaTime;
+        m_mousePos.x = Input.GetAxis("Mouse X") * m_sensitivity.Value * Time.deltaTime;
+        m_mousePos.y = Input.GetAxis("Mouse Y") * m_sensitivity.Value * Time.deltaTime;
     }
     //FixXRotation - means that we can clamp ou our look up function
     private void ClampUpRotation()
@@ -47,19 +46,6 @@ public class MouseLook : MonoBehaviour
     private void LookAt()
     {
         m_camera.transform.localRotation = Quaternion.Euler(m_xRotation, 0, 0);
-        m_playerObject.Rotate(Vector3.up * m_mousePos.x);
-
-        if (Input.GetKey(m_freeMouse)) // Display Cursor
-        {
-            Cursor.lockState = CursorLockMode.None;  // Display Cursor
-            Cursor.visible = true;
-        }
-        else 
-        {
-            Cursor.lockState = CursorLockMode.Locked; // Hide Cursor
-            Cursor.visible = false;
-        }
-               
-
+        m_playerObject.Rotate(Vector3.up * m_mousePos.x);             
     }
 }

@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 208985651833036971}
   - component: {fileID: 208985651833036948}
   - component: {fileID: 208985651833036949}
-  - component: {fileID: 208985651833036968}
+  - component: {fileID: 7364791957528275513}
+  - component: {fileID: 2732940487448833120}
   - component: {fileID: 208985651833036969}
   m_Layer: 0
   m_Name: Player
@@ -99,7 +100,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &208985651833036968
+--- !u!114 &7364791957528275513
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +116,22 @@ MonoBehaviour:
   speed: {fileID: 11400000, guid: 0ccfb276b7fe2da4e914b8763136fa72, type: 2}
   gravity: {fileID: 11400000, guid: cff72fa737d6dee45afd8c54cda624d9, type: 2}
   jumpHight: {fileID: 11400000, guid: 31ac3d52f4c5a424b87219a5bf41b3f2, type: 2}
+--- !u!114 &2732940487448833120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208985651833036950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc23f579d5e5c1844a96036616bf1929, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sensitivity: {fileID: 11400000, guid: 1856cd51c65c7fe44829cdf100050af7, type: 2}
+  m_clampAngle: 90
+  m_playerObject: {fileID: 208985651833036970}
+  m_camera: {fileID: 208985652184150782}
 --- !u!143 &208985651833036969
 CharacterController:
   m_ObjectHideFlags: 0
