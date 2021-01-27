@@ -29,6 +29,7 @@ public class LanternController : MonoBehaviour
         {
             currentColour = Colours.Length + 1;
             UpdateBoolean();
+            currentColour = 0;
         }
     }
 
