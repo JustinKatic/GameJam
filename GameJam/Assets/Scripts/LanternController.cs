@@ -10,28 +10,25 @@ public class LanternController : MonoBehaviour
     [SerializeField] GameObject BlueLantern;
     [SerializeField] GameObject WhiteLantern;
 
+    public float PlayerRadius;
+    public LayerMask colourCubesLayer;
 
 
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.tag == "ColorCube")
-        {
-            other.gameObject.GetComponent<PrefabColourLogic>().inRangeOfPlayer = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "ColorCube")
-        {
-            other.gameObject.GetComponent<PrefabColourLogic>().inRangeOfPlayer = false;
-        }
-    }
+
 
     int currentColour;
 
     private void OnEnable() => currentColour = 0;
     void Update()
     {
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, PlayerRadius, colourCubesLayer);
+        int i = 0;
+        while (i < hitColliders.Length)
+        {
+            hitColliders[i].gameObject.GetComponent<PrefabColourLogic>().inRangeOfPlayer = true;
+            i++;
+        }
+
             if (Input.GetKeyUp(FirstKey))
         {
             currentColour--;
@@ -91,6 +88,10 @@ public class LanternController : MonoBehaviour
     }
 
 
-
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, PlayerRadius);
+    }
 
 }

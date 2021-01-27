@@ -15,14 +15,18 @@ public class PrefabColourLogic : MonoBehaviour
 
     private void Update()
     {
-        if (inRangeOfPlayer && MyBool.Value)
+        if (inRangeOfPlayer)
         {
-            SetObjAct();
+            if (MyBool.Value)
+                SetObjAct();
         }
-        else if (!inRangeOfPlayer && !MyBool.Value)
+
+        if (!MyBool.Value)
         {
             SetObjUnAct();
+            inRangeOfPlayer = false;
         }
+
     }
 
 
@@ -37,4 +41,6 @@ public class PrefabColourLogic : MonoBehaviour
         MyCollider.isTrigger = true;
         MyMesh.enabled = false;
     }
+
+
 }

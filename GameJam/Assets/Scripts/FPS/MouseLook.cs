@@ -46,6 +46,6 @@ public class MouseLook : MonoBehaviour
     private void LookAt()
     {
         m_camera.transform.localRotation = Quaternion.Euler(m_xRotation, 0, 0);
-        m_playerObject.Rotate(Vector3.up * m_mousePos.x);             
+        m_playerObject.Rotate(Vector3.up * m_mousePos.x);    
     }
 }
