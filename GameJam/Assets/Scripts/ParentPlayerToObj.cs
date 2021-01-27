@@ -13,11 +13,11 @@ public class ParentPlayerToObj : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         AttachPlayerToObj();
     }
+
 
     private void OnTriggerExit(Collider other)
     {
