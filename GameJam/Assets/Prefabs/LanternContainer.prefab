@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstKey: 113
   SecondKey: 101
+  ResetKey: 27
   Colours:
   - {fileID: 11400000, guid: 8c46dc464cec30346b2210138cde48b3, type: 2}
   - {fileID: 11400000, guid: a4138d1122665a74cb56a3b93559eac5, type: 2}
