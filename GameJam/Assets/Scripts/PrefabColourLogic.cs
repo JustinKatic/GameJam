@@ -22,7 +22,10 @@ public class PrefabColourLogic : MonoBehaviour
         }
 
         if (!MyBool.Value)
+        {
             SetObjUnAct();
+            inRangeOfPlayer = false;
+        }
 
     }
 
@@ -38,4 +41,6 @@ public class PrefabColourLogic : MonoBehaviour
         MyCollider.isTrigger = true;
         MyMesh.enabled = false;
     }
+
+
 }

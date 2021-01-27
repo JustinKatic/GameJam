@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4274498912636255581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5120110938633757547}
@@ -162,10 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlatformPoints:
-  - {fileID: 6547037522615820283}
   - {fileID: 2835335498501584138}
+  - {fileID: 6547037522615820283}
   speed: 3
-  startPos: {fileID: 6547037522615820283}
+  startPos: {fileID: 2835335498501584138}
   platformWaitTime: 0.5
 --- !u!1001 &3931168653375387704
 PrefabInstance:
@@ -234,7 +234,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2423413099775482277, guid: 7503b8ad43bb23245bda6a0288a553c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7503b8ad43bb23245bda6a0288a553c1, type: 3}
 --- !u!1 &7728316251993755138 stripped
 GameObject:
