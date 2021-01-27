@@ -4,6 +4,7 @@ public class LanternController : MonoBehaviour
 {
     [SerializeField] KeyCode FirstKey, SecondKey, ResetKey;
     [SerializeField] ScriptableBool[] Colours;
+    //[SerializeField] Scriptableeven
 
     int currentColour;
 
