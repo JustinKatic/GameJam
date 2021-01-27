@@ -16,7 +16,19 @@ public class PrefabColourLogic : MonoBehaviour
         mat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
-    private void Update()
+   /* private void FixedUpdate()
+    {
+        if (MyBool.Value)
+        {
+            SetObjOpaq();
+        }
+        else if (!MyBool.Value)
+        {
+            SetObjTrans();
+        }
+    }*/
+
+    public void UpdateColour()
     {
         if (MyBool.Value)
         {
@@ -27,8 +39,6 @@ public class PrefabColourLogic : MonoBehaviour
             SetObjTrans();
         }
     }
-
-
 
     void SetObjTrans()
     {

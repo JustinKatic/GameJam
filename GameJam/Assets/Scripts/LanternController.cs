@@ -4,9 +4,7 @@ public class LanternController : MonoBehaviour
 {
     [SerializeField] KeyCode FirstKey, SecondKey, ResetKey;
     [SerializeField] ScriptableBool[] Colours;
-    [SerializeField] GameEvent RedLightActive;
-    [SerializeField] GameEvent GreenLightActive;
-    [SerializeField] GameEvent BlueLightActive;
+    [SerializeField] GameEvent ColourChanged;
 
 
     int currentColour;
@@ -43,23 +41,6 @@ public class LanternController : MonoBehaviour
             sb.Value = false;
         if(currentColour < Colours.Length)
             Colours[currentColour].Value = true;
-
-        if (currentColour == 2)
-        {
-            Debug.Log("Green");
-            GreenLightActive.Raise();
-        }
-        else if (currentColour == 1)
-        {
-            Debug.Log("Blue");
-            BlueLightActive.Raise();
-
-        }
-        else if (currentColour == 0)
-        {
-            Debug.Log("Red");
-            RedLightActive.Raise();
-
-        }
+        ColourChanged.Raise();
     }
 }
