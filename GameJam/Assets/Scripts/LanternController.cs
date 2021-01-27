@@ -12,13 +12,27 @@ public class LanternController : MonoBehaviour
 
 
 
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.tag == "ColorCube")
+        {
+            other.gameObject.GetComponent<PrefabColourLogic>().inRangeOfPlayer = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "ColorCube")
+        {
+            other.gameObject.GetComponent<PrefabColourLogic>().inRangeOfPlayer = false;
+        }
+    }
 
     int currentColour;
 
     private void OnEnable() => currentColour = 0;
     void Update()
     {
-        if (Input.GetKeyUp(FirstKey))
+            if (Input.GetKeyUp(FirstKey))
         {
             currentColour--;
             if (currentColour < 0)
@@ -75,5 +89,8 @@ public class LanternController : MonoBehaviour
             WhiteLantern.SetActive(false);
         }
     }
+
+
+
 
 }

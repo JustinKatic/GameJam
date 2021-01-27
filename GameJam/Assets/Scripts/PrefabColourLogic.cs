@@ -6,6 +6,8 @@ public class PrefabColourLogic : MonoBehaviour
     [SerializeField] BoxCollider MyCollider;
     [SerializeField] ScriptableBool MyBool;
 
+    public bool inRangeOfPlayer;
+
 
     void Start()
     {
@@ -13,11 +15,11 @@ public class PrefabColourLogic : MonoBehaviour
 
     private void Update()
     {
-        if (MyBool.Value)
+        if (inRangeOfPlayer && MyBool.Value)
         {
             SetObjAct();
         }
-        else if (!MyBool.Value)
+        else if (!inRangeOfPlayer && !MyBool.Value)
         {
             SetObjUnAct();
         }
@@ -26,13 +28,13 @@ public class PrefabColourLogic : MonoBehaviour
 
     void SetObjAct()
     {
-        MyCollider.enabled = true;
+        MyCollider.isTrigger = false;
         MyMesh.enabled = true;
     }
 
     void SetObjUnAct()
     {
-        MyCollider.enabled = false;
+        MyCollider.isTrigger = true;
         MyMesh.enabled = false;
     }
 }
