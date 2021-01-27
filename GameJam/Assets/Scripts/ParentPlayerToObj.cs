@@ -13,6 +13,16 @@ public class ParentPlayerToObj : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        AttachPlayerToObj();
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        DetachPlayerFromObj();
+    }
     public void AttachPlayerToObj()
     {
         player.transform.parent = transform;
