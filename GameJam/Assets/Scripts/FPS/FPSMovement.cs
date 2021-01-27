@@ -18,9 +18,7 @@ public class FPSMovement : MonoBehaviour
     public float m_jumpHeight = 3f;
     private Vector3 m_velocity;
 
-    public Transform m_groundCheckPoint;
-    public float m_groundDistance = 0.4f;
-    public LayerMask m_groundMask;
+
     private bool m_isGrounded;
 
 
@@ -33,16 +31,14 @@ public class FPSMovement : MonoBehaviour
 
     private float m_finalSpeed = 0;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        m_finalSpeed = m_movementSpeed; // set final speed to movement at the start
+        m_finalSpeed = m_movementSpeed;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        m_isGrounded = HitGroundCheck(); // Check if touching the ground every frame
+        m_isGrounded = m_charController.isGrounded;
         MoveInputCheck(); // Check movement input
 
     }
@@ -51,18 +47,18 @@ public class FPSMovement : MonoBehaviour
     void MoveInputCheck()
     {
         float x = Input.GetAxis("Horizontal"); // get the x value for the GameObject vector
-        float z = Input.GetAxis("Vertical"); // get the z valeu for the GameObject vector
+        float z = Input.GetAxis("Vertical"); // get the z value for the GameObject vector
 
         Vector3 move = Vector3.zero;
 
         if (Input.GetKey(m_forward) || Input.GetKey(m_back) || Input.GetKey(m_left) || Input.GetKey(m_right)) // check input for the keys defined in VARS
         {
             move = transform.right * x + transform.forward * z; // calculate the move vector (direction)
-           
+
         }
 
         MovePlayer(move);
-        RunCheck(); // Chaecks the input for un
+        RunCheck(); // Chaecks the input for run
         JumpCheck(); // Checks if we can jump
     }
 
@@ -90,18 +86,7 @@ public class FPSMovement : MonoBehaviour
 
     }
 
-    // Ground Check
-    bool HitGroundCheck()
-    {
-        bool isGrounded = Physics.CheckSphere(m_groundCheckPoint.position, m_groundDistance, m_groundMask);
-    
-        //Gravity
-        if (isGrounded && m_velocity.y < 0)
-        {
-            m_velocity.y = -2f;
-        }
-        return isGrounded;
-    }
+
 
     //Jump check
     void JumpCheck()
@@ -110,7 +95,7 @@ public class FPSMovement : MonoBehaviour
         {
             if (m_isGrounded == true)
             {
-                m_velocity.y = Mathf.Sqrt(m_jumpHeight * -2f * m_gravity);  
+                m_velocity.y = Mathf.Sqrt(m_jumpHeight * -2f * m_gravity);
             }
         }
     }

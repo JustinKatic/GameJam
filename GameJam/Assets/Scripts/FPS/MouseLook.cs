@@ -6,7 +6,6 @@ public class MouseLook : MonoBehaviour
     public float m_clampAngle = 90f; // this limits our look up 
     public Transform m_playerObject; // Store player container
     public Transform m_camera; // Store the camera transform
-    public KeyCode m_freeMouse;
 
     private Vector2 m_mousePos; // store mouse position
 
@@ -47,19 +46,6 @@ public class MouseLook : MonoBehaviour
     private void LookAt()
     {
         m_camera.transform.localRotation = Quaternion.Euler(m_xRotation, 0, 0);
-        m_playerObject.Rotate(Vector3.up * m_mousePos.x);
-
-        if (Input.GetKey(m_freeMouse)) // Display Cursor
-        {
-            Cursor.lockState = CursorLockMode.None;  // Display Cursor
-            Cursor.visible = true;
-        }
-        else 
-        {
-            Cursor.lockState = CursorLockMode.Locked; // Hide Cursor
-            Cursor.visible = false;
-        }
-               
-
+        m_playerObject.Rotate(Vector3.up * m_mousePos.x);             
     }
 }
