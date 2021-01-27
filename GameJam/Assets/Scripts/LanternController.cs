@@ -4,16 +4,21 @@ public class LanternController : MonoBehaviour
 {
     [SerializeField] KeyCode FirstKey, SecondKey, ResetKey;
     [SerializeField] ScriptableBool[] Colours;
-    [SerializeField] GameEvent ColourChanged;
+
+    [SerializeField] GameObject RedLantern;
+    [SerializeField] GameObject GreenLantern;
+    [SerializeField] GameObject BlueLantern;
+    [SerializeField] GameObject WhiteLantern;
+
+
 
 
     int currentColour;
 
     private void OnEnable() => currentColour = 0;
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(FirstKey))
+        if (Input.GetKeyUp(FirstKey))
         {
             currentColour--;
             if (currentColour < 0)
@@ -27,7 +32,7 @@ public class LanternController : MonoBehaviour
                 currentColour = 0;
             UpdateBoolean();
         }
-        if(Input.GetKeyUp(ResetKey))
+        if (Input.GetKeyUp(ResetKey))
         {
             currentColour = Colours.Length + 1;
             UpdateBoolean();
@@ -39,8 +44,36 @@ public class LanternController : MonoBehaviour
     {
         foreach (ScriptableBool sb in Colours)
             sb.Value = false;
-        if(currentColour < Colours.Length)
+        if (currentColour < Colours.Length)
+        {
             Colours[currentColour].Value = true;
-        ColourChanged.Raise();
+            UpdateLanternColour();
+        }
     }
+
+    public void UpdateLanternColour()
+    {
+        if(Colours[0].Value == true)
+        {
+            RedLantern.SetActive(true);
+            GreenLantern.SetActive(false);
+            BlueLantern.SetActive(false);
+            WhiteLantern.SetActive(false);
+        }
+        else if (Colours[1].Value == true)
+        {
+            RedLantern.SetActive(false);
+            GreenLantern.SetActive(false);
+            BlueLantern.SetActive(true);
+            WhiteLantern.SetActive(false);
+        }
+        else if(Colours[2].Value == true)
+        {
+            RedLantern.SetActive(false);
+            GreenLantern.SetActive(true);
+            BlueLantern.SetActive(false);
+            WhiteLantern.SetActive(false);
+        }
+    }
+
 }

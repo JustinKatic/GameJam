@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 54301882967429818}
   - component: {fileID: 54301882967429819}
   - component: {fileID: 54301882967429816}
-  - component: {fileID: -7398851397264519772}
   m_Layer: 0
   m_Name: Red
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 54301882967429817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,32 +111,3 @@ MonoBehaviour:
   MyMesh: {fileID: 54301882967429818}
   MyCollider: {fileID: 54301882967429819}
   MyBool: {fileID: 11400000, guid: 8c46dc464cec30346b2210138cde48b3, type: 2}
---- !u!114 &-7398851397264519772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54301882967429817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c977e5961f425844e81d0dd269466d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-  - {fileID: 11400000, guid: 4fdf51e3e3112494d96895489317a0f9, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 54301882967429816}
-        m_TargetAssemblyTypeName: PrefabColourLogic, Assembly-CSharp
-        m_MethodName: UpdateColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
