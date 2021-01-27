@@ -3,6 +3,7 @@
 public class PrefabColourLogic : MonoBehaviour
 {
     [SerializeField] MeshRenderer MyMesh;
+    [SerializeField] BoxCollider MyCollider;
     [SerializeField] ScriptableBool MyBool;
     private void OnEnable() => SetMesh(false);
     private void FixedUpdate()
@@ -12,5 +13,9 @@ public class PrefabColourLogic : MonoBehaviour
         else if (!MyBool.Value && MyMesh.enabled)
             SetMesh(false);
     }
-    void SetMesh(bool b) => MyMesh.enabled = b;
+    void SetMesh(bool b)
+    {
+        MyMesh.enabled = b;
+        MyCollider.enabled = b;
+    }
 }

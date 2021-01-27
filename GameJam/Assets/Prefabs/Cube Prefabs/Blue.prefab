@@ -109,4 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MyMesh: {fileID: 6759392457913300543}
+  MyCollider: {fileID: 6759392457913300536}
   MyBool: {fileID: 11400000, guid: a4138d1122665a74cb56a3b93559eac5, type: 2}
