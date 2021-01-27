@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5552940609460869229}
   m_Layer: 0
   m_Name: Green
-  m_TagString: Untagged
+  m_TagString: ColorCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5552940609460869226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.95, y: 0, z: 5.34}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -111,3 +111,4 @@ MonoBehaviour:
   MyMesh: {fileID: 5552940609460869231}
   MyCollider: {fileID: 5552940609460869228}
   MyBool: {fileID: 11400000, guid: 3aa1e16d7b2c1df40857295caaba16ec, type: 2}
+  inRangeOfPlayer: 0
