@@ -7,7 +7,7 @@ public class PrefabColourLogic : MonoBehaviour
     [SerializeField] ScriptableBool MyBool;
 
     private Material mat;
-    private float speed = 1f;
+    private float speed = 2f;
 
 
 
