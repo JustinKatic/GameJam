@@ -10,25 +10,12 @@ public class PrefabColourLogic : MonoBehaviour
     private float speed = 2f;
 
 
-
     void Start()
     {
         mat = gameObject.GetComponent<MeshRenderer>().material;
     }
 
-   /* private void FixedUpdate()
-    {
-        if (MyBool.Value)
-        {
-            SetObjOpaq();
-        }
-        else if (!MyBool.Value)
-        {
-            SetObjTrans();
-        }
-    }*/
-
-    public void UpdateColour()
+    private void Update()
     {
         if (MyBool.Value)
         {
@@ -39,13 +26,14 @@ public class PrefabColourLogic : MonoBehaviour
             SetObjTrans();
         }
     }
+
 
     void SetObjTrans()
     {
         if (mat.color.a > 0)
         {
             Color newColor = mat.color;
-            newColor.a -= Time.deltaTime * speed;
+            newColor.a -= speed * Time.deltaTime;
             mat.color = newColor;
             gameObject.GetComponent<MeshRenderer>().material = mat;
         }
@@ -60,7 +48,7 @@ public class PrefabColourLogic : MonoBehaviour
         if (mat.color.a < 255)
         {
             Color newColor = mat.color;
-            newColor.a += Time.deltaTime * speed;
+            newColor.a += speed * Time.deltaTime;
             mat.color = newColor;
             gameObject.GetComponent<MeshRenderer>().material = mat;        
             MyCollider.enabled = true;

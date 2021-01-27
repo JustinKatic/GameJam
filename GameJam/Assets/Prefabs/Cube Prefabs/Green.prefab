@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5552940609460869231}
   - component: {fileID: 5552940609460869228}
   - component: {fileID: 5552940609460869229}
-  - component: {fileID: 1214855193689058599}
   m_Layer: 0
   m_Name: Green
   m_TagString: Untagged
@@ -112,32 +111,3 @@ MonoBehaviour:
   MyMesh: {fileID: 5552940609460869231}
   MyCollider: {fileID: 5552940609460869228}
   MyBool: {fileID: 11400000, guid: 3aa1e16d7b2c1df40857295caaba16ec, type: 2}
---- !u!114 &1214855193689058599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5552940609460869226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c977e5961f425844e81d0dd269466d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event:
-  - {fileID: 11400000, guid: 4fdf51e3e3112494d96895489317a0f9, type: 2}
-  Response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5552940609460869229}
-        m_TargetAssemblyTypeName: PrefabColourLogic, Assembly-CSharp
-        m_MethodName: UpdateColour
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
