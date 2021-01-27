@@ -7,7 +7,7 @@ public class PrefabColourLogic : MonoBehaviour
     [SerializeField] ScriptableBool MyBool;
 
     private Material mat;
-   // private float speed = 8f;
+    private float speed = 2f;
 
 
     void Start()
@@ -33,7 +33,7 @@ public class PrefabColourLogic : MonoBehaviour
         if (mat.color.a > 0)
         {
             Color newColor = mat.color;
-            newColor.a -= Time.deltaTime;
+            newColor.a -= speed * Time.deltaTime;
             mat.color = newColor;
             gameObject.GetComponent<MeshRenderer>().material = mat;
         }
@@ -48,7 +48,7 @@ public class PrefabColourLogic : MonoBehaviour
         if (mat.color.a < 255)
         {
             Color newColor = mat.color;
-            newColor.a += Time.deltaTime;
+            newColor.a += speed * Time.deltaTime;
             mat.color = newColor;
             gameObject.GetComponent<MeshRenderer>().material = mat;        
             MyCollider.enabled = true;
