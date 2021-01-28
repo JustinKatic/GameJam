@@ -26,7 +26,6 @@ public class PrefabColourLogic : MonoBehaviour
             SetObjUnAct();
             inRangeOfPlayer = false;
         }
-
     }
 
 
@@ -34,13 +33,19 @@ public class PrefabColourLogic : MonoBehaviour
     {
         MyCollider.isTrigger = false;
         MyMesh.enabled = true;
+        if(gameObject.tag == "Switch")
+        {
+            MyCollider.isTrigger = true;
+        }
     }
 
     void SetObjUnAct()
     {
         MyCollider.isTrigger = true;
         MyMesh.enabled = false;
+        if (gameObject.tag == "Switch")
+        {
+            MyCollider.isTrigger = false;
+        }
     }
-
-
 }
